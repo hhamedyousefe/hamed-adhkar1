@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#171513">
+<title>المرحوم حامد — صدقة جارية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#d7b875;--cream:#f4ead8;--ink:#171513;--glass:rgba(20,18,16,.48)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:#171513;color:#fff;font-family:Cairo,Arial,sans-serif;overflow-x:hidden}
+.bg{position:fixed;inset:-7%;z-index:-5;overflow:hidden;background:#171513}
+.bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(1px) brightness(.62) saturate(.65);opacity:0;transform:scale(1.07);transition:opacity 1.15s ease,transform 7s ease}
+.bg img.show{opacity:1}
+.bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,13,12,.24),rgba(15,13,12,.64) 75%,rgba(15,13,12,.88))}
+.noise{position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E")}
+.top{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:center;padding:14px}
+.pill{padding:7px 14px;border:1px solid rgba(255,255,255,.18);background:rgba(20,18,16,.35);backdrop-filter:blur(14px);border-radius:999px;color:#fff9;font-size:10px}
+.hero{min-height:100svh;display:grid;place-items:center;padding:70px 16px 55px;text-align:center}
+.center{width:min(650px,100%)}
+.photo{width:min(270px,64vw);height:min(270px,64vw);margin:auto;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.82);box-shadow:0 0 0 9px rgba(255,255,255,.07),0 28px 90px rgba(0,0,0,.5);transition:opacity .6s,transform .6s}
+.photo.out{opacity:.18;transform:scale(.97)}
+.kicker{font:22px Amiri,serif;color:var(--gold);margin-top:22px}
+h1{font:700 clamp(52px,10vw,84px)/1 Amiri,serif;margin:0;text-shadow:0 5px 30px #0008}
+.sub{font:27px Amiri,serif;color:var(--cream);margin-top:3px}
+.date{font-size:11px;color:#fff9;margin-top:5px}
+.dua{font:23px/1.9 Amiri,serif;max-width:610px;margin:17px auto 20px}
+.main-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid #ffffff2e;background:#ffffff10;color:#fff;text-decoration:none;border-radius:999px;padding:9px 16px;font-size:11px;backdrop-filter:blur(12px)}
+.btn.gold{background:var(--gold);color:#1b1814;border-color:var(--gold);font-weight:700}
+.counter{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:27px}
+.c{width:68px;height:68px;border-radius:50%;border:1px solid #ffffff36;background:#15120fa6;backdrop-filter:blur(10px);display:flex;flex-direction:column;justify-content:center;align-items:center}
+.c b{font-size:18px;color:var(--gold);line-height:1}.c span{font-size:8px;color:#fffb;margin-top:4px}
+.fixed-audio{position:fixed;left:18px;bottom:18px;z-index:30;width:52px;height:52px;border-radius:50%;border:1px solid #ffffff42;background:rgba(20,18,16,.58);color:#fff;backdrop-filter:blur(14px);font-size:19px;cursor:pointer;box-shadow:0 10px 30px #0006}
+.audio-tip{position:fixed;left:78px;bottom:26px;z-index:29;background:#171513cc;border:1px solid #ffffff1f;border-radius:999px;padding:7px 11px;font-size:9px;color:#fff9;backdrop-filter:blur(10px);opacity:1;transition:opacity .4s}
+.audio-tip.hide{opacity:0;pointer-events:none}
+.tools{padding:45px 16px 85px;width:min(680px,100%);margin:auto}
+.card{background:rgba(20,18,16,.57);border:1px solid #ffffff19;border-radius:27px;padding:25px;backdrop-filter:blur(18px);box-shadow:0 25px 80px #0005}
+h2{font:700 35px Amiri,serif;color:var(--gold);text-align:center;margin:0 0 5px}
+.note{text-align:center;color:#fff9;font-size:11px;margin:0 0 19px}
+.dhikr-text{font:25px/1.9 Amiri,serif;text-align:center;color:#fff}
+.big-tap{display:block;width:108px;height:108px;border-radius:50%;margin:18px auto 10px;border:2px solid var(--gold);background:#181512d9;color:#fff;font-size:28px;cursor:pointer;box-shadow:0 0 0 7px #d7b87514}
+.big-tap:active{transform:scale(.95)}
+.small-row{display:flex;justify-content:center;gap:7px;flex-wrap:wrap}
+.chip{border:1px solid #ffffff22;background:#ffffff0d;color:#fff;border-radius:999px;padding:8px 11px;font:10px Cairo;cursor:pointer}
+.chip.active{background:var(--gold);color:#171513;border-color:var(--gold);font-weight:700}
+.progress{height:4px;background:#ffffff14;border-radius:99px;overflow:hidden;margin-top:12px}.progress i{display:block;height:100%;width:0;background:var(--gold);transition:width .2s}
+.remembrance{margin-top:16px;text-align:center;font:21px/1.9 Amiri,serif;color:var(--cream)}
+footer{text-align:center;padding:0 16px 35px;color:#fff8;font-size:10px}
+@media(max-width:520px){.photo{width:205px;height:205px}.dua{font-size:21px}.card{padding:20px}.dhikr-text{font-size:23px}.audio-tip{display:none}}
+</style>
+</head>
+<body>
+<div class="bg"><img id="bg1" class="show" src="1.jpeg"><img id="bg2" src="2.jpeg"></div>
+<div class="noise"></div>
+<div class="top"><div class="pill">ذِكْرَى طَيِّبَة • صَدَقَة جَارِيَة</div></div>
+
+<main class="hero">
+<div class="center">
+<img id="mainPhoto" class="photo" src="1.jpeg" alt="المرحوم حامد">
+<div class="kicker">رَحِمَهُ اللهُ رحمةً واسعة</div>
+<h1>المرحوم حامد</h1>
+<div class="sub">صدقة جارية عن روحه</div>
+<div class="date">17 سبتمبر 2026 م • 6 ربيع الآخر 1448 هـ</div>
+<div class="dua">اللهم اغفر له وارحمه، وعافه واعفُ عنه، ونوّر قبره، واجعل قبره روضةً من رياض الجنة.</div>
+<div class="main-actions">
+<a class="btn gold" href="#tasbeeh">📿 ابدأ التسبيح</a>
+<a class="btn" href="#dua">🤲 ادعُ له</a>
+</div>
+<div class="counter">
+<div class="c"><b id="d">0</b><span>يوم</span></div>
+<div class="c"><b id="h">0</b><span>ساعة</span></div>
+<div class="c"><b id="m">0</b><span>دقيقة</span></div>
+<div class="c"><b id="s">0</b><span>ثانية</span></div>
+</div>
+</div>
+</main>
+
+<section class="tools" id="tasbeeh">
+<div class="card">
+<h2>سبحتك للمرحوم</h2>
+<p class="note">اختر الذكر واضغط الدائرة — بسيطة للجميع.</p>
+<div class="small-row" id="chips"></div>
+<div class="dhikr-text" id="dhikr">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ</div>
+<button class="big-tap" id="tap">0</button>
+<div class="progress"><i id="bar"></i></div>
+<p class="remembrance">واجعل دعاءك وذكرك صدقةً جاريةً له، واسأل الله له الرحمة والمغفرة.</p>
+</div>
+</section>
+
+<section class="tools" id="dua">
+<div class="card">
+<h2>دعاء للمرحوم</h2>
+<div class="remembrance">اللهم اغفر له وارحمه، وعافه واعف عنه، وأكرم نزله، ووسّع مدخله، ونوّر قبره، وآنس وحشته، وارفع درجته في المهديين، واجعل الفردوس الأعلى منزله.</div>
+</div>
+</section>
+
+<footer>اللهم اجعل هذه الصفحة ذكرًا ودعاءً ورحمةً للمرحوم حامد 🤍</footer>
+
+<audio id="audio" src="memorial-audio.wav" autoplay loop preload="auto"></audio>
+<button class="fixed-audio" id="audioBtn" aria-label="إيقاف أو تشغيل الصوت">🔊</button>
+<div class="audio-tip" id="audioTip">اضغط هنا لإيقاف الصوت</div>
+
+<script>
+/* صور الخلفية: cross-fade بدل القطع المفاجئ */
+const photos=["1.jpeg","2.jpeg","3.jpeg","4.jpeg","5.jpeg","6.jpeg"];
+let idx=0, front=1;
+const bg1=document.getElementById("bg1"), bg2=document.getElementById("bg2"), mainPhoto=document.getElementById("mainPhoto");
+setInterval(()=>{
+  idx=(idx+1)%photos.length;
+  const next=front===1?bg2:bg1, old=front===1?bg1:bg2;
+  next.src=photos[idx]; next.classList.add("show"); old.classList.remove("show");
+  front=front===1?2:1;
+  mainPhoto.classList.add("out");
+  setTimeout(()=>{mainPhoto.src=photos[idx];mainPhoto.classList.remove("out")},360);
+},1000);
+
+/* العداد منذ تاريخ الوفاة */
+const death=new Date("2026-09-17T00:00:00+03:00");
+function counter(){
+  const diff=Math.max(0,Date.now()-death.getTime()), sec=Math.floor(diff/1000);
+  document.getElementById("d").textContent=Math.floor(sec/86400);
+  document.getElementById("h").textContent=Math.floor(sec/3600)%24;
+  document.getElementById("m").textContent=Math.floor(sec/60)%60;
+  document.getElementById("s").textContent=sec%60;
+}
+counter();setInterval(counter,1000);
+
+/* سبحة سهلة */
+const adhkar=[
+["سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",100],
+["أَسْتَغْفِرُ اللَّهَ",100],
+["لَا إِلَهَ إِلَّا اللَّهُ",100],
+["اللَّهُ أَكْبَرُ",33],
+["الْحَمْدُ لِلَّهِ",33],
+["اللهم صل وسلم على نبينا محمد",100]
+];
+let ai=0,count=0;
+const chips=document.getElementById("chips"),dhikr=document.getElementById("dhikr"),tap=document.getElementById("tap"),bar=document.getElementById("bar");
+adhkar.forEach((a,i)=>{
+ const b=document.createElement("button");b.className="chip"+(i===0?" active":"");b.textContent=a[0].slice(0,18);
+ b.onclick=()=>{ai=i;count=0;dhikr.textContent=a[0];tap.textContent=0;bar.style.width="0";chips.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));b.classList.add("active")};
+ chips.appendChild(b);
+});
+tap.onclick=()=>{if(count<adhkar[ai][1])count++;tap.textContent=count;bar.style.width=Math.min(100,count/adhkar[ai][1]*100)+"%"};
+
+/* الصوت: يطلب autoplay، وإذا منع المتصفح التشغيل التلقائي يبدأ فور أول تفاعل. */
+const audio=document.getElementById("audio"), audioBtn=document.getElementById("audioBtn"), tip=document.getElementById("audioTip");
+audio.volume=.8;
+function tryPlay(){audio.play().then(()=>{audioBtn.textContent="🔊"}).catch(()=>{})}
+tryPlay();
+["pointerdown","touchstart","keydown"].forEach(ev=>window.addEventListener(ev,tryPlay,{once:true,passive:true}));
+audioBtn.onclick=()=>{if(audio.paused){audio.play();audioBtn.textContent="🔊";tip.textContent="اضغط هنا لإيقاف الصوت"}else{audio.pause();audioBtn.textContent="🔇";tip.textContent="اضغط هنا لتشغيل الصوت"};tip.classList.add("hide")};
+setTimeout(()=>tip.classList.add("hide"),5000);
+</script>
+</body>
+</html>
